@@ -90,9 +90,3 @@ class Tiger:
 
     def doPlay(self):
         print(self.name, ": Davai poigrayem!")
-
-    def omg(self):
-        print("qweqweqwe")
-              
-    def gg(self):
-        print("sfoisf")
