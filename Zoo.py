@@ -81,7 +81,7 @@ class Penguin:
         self.isFeeded = False
 
     def doSound(self):
-        print(self.__name, ":", self.sound)
+        print(self.__name, ":", self.__sound)
 
     def eats(self, mass, typeOfEat):
         if (typeOfEat in self.whatEat):
@@ -151,7 +151,7 @@ class Tiger:
         self.isFeeded = False
 
     def doSound(self):
-        print(self.__name, ":", self.sound)
+        print(self.__name, ":", self.__sound)
 
     def eats(self, mass, typeOfEat):
         if (typeOfEat in self.whatEat):
