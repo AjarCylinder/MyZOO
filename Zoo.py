@@ -94,3 +94,5 @@ class Tiger:
     def omg(self):
         print("qweqweqwe")
               
+    def gg(self):
+        print("sfoisf")
