@@ -81,21 +81,21 @@ class Penguin:
         self.isFeeded = False
 
     def doSound(self):
-        print(self.name, ":", self.sound)
+        print(self.__name, ":", self.sound)
 
     def eats(self, mass, typeOfEat):
         if (typeOfEat in self.whatEat):
-            print(self.name, ": Ya pokushal")
+            print(self.__name, ": Ya pokushal")
             if mass >= self.food_day:
                 self.isFeeded = True
                 return self.isFeeded
             else:
                 return self.isFeeded
         else:
-            print(self.name, ": Ya ne budu eto est'")
+            print(self.__name, ": Ya ne budu eto est'")
 
     def doPlay(self):
-        print(self.name, ": Davai poigrayem!")
+        print(self.__name, ": Davai poigrayem!")
 
     @property
     def Age(self):
@@ -151,21 +151,21 @@ class Tiger:
         self.isFeeded = False
 
     def doSound(self):
-        print(self.name, ":", self.sound)
+        print(self.__name, ":", self.sound)
 
     def eats(self, mass, typeOfEat):
         if (typeOfEat in self.whatEat):
-            print(self.name, ": Ya pokushal")
+            print(self.__name, ": Ya pokushal")
             if mass >= self.food_day:
                 self.isFeeded = True
                 return self.isFeeded
             else:
                 return self.isFeeded
         else:
-            print(self.name, ": Ya ne budu eto est'")
+            print(self.__name, ": Ya ne budu eto est'")
 
     def doPlay(self):
-        print(self.name, ": Davai poigrayem!")
+        print(self.__name, ": Davai poigrayem!")
 
     @property
     def Age(self):
