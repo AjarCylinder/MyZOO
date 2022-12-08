@@ -1,8 +1,8 @@
-from Zoo import *
+from tiger import *
 
-egor = Elephant("Egor",5 , 15, ["сено"])
+egor = Tiger("Egor", 5, 15, ["мясо"])
 
-
+print(egor.Name)
 
 
 
