@@ -7,8 +7,8 @@ class Volier:
         self._value = 0
         self._list = []
 
-    def setAnimal(self):
-        list.append
+    def addAnimal(self):
+        self._list.append(self)
 
     #def doSound(self):
 

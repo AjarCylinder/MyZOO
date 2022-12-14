@@ -10,7 +10,7 @@ class BaseAnimal:
         self._predator = True
         self._sound = ""
         self.isFeeded = False
-        self._volier = ""
+
 
     def doSound(self):
         print(self._name, ":", self._sound)

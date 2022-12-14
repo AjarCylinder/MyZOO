@@ -4,7 +4,7 @@ class Elephant(BaseAnimal):
         super().__init__(name, food_day, age, whatEat)
 
         self.__biom = "savannah"
-        self.__place = "120 m^2"
+        self.__place = 120
         self.__whatEat = whatEat
         self.__predator = False
         self.__sound = "UUErrrrrrrrrrrRRRRRRRR"
