@@ -1,5 +1,4 @@
 from BaseAnimal import *
-
 class Tiger(BaseAnimal):
     def __init__(self, name, food_day, age, whatEat):
         super().__init__(name, food_day, age, whatEat)

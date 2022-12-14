@@ -10,6 +10,7 @@ class BaseAnimal:
         self._predator = True
         self._sound = ""
         self.isFeeded = False
+        self._volier = ""
 
     def doSound(self):
         print(self._name, ":", self._sound)
@@ -66,3 +67,5 @@ class BaseAnimal:
     @property
     def whatEat(self):
         return self._whatEat
+
+
