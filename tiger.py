@@ -8,6 +8,5 @@ class Tiger(BaseAnimal):
         self._whatEat = whatEat
         self._predator = True
         self._sound = "ROAAARRRR"
-        self.isFeeded = False
 
 
