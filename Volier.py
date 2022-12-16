@@ -8,9 +8,9 @@ class Volier:
 
     def addAnimal(self, animal):
         if animal.biom == self._biom:
-            if animal.place < self._place:
+            if animal.place <= self._place:
                 self._list.append(animal)
-                self._place += animal.place
+                self._place -= animal.place
             else:
                 print(animal.name, ":", "mne ne xvataet mesta")
         else:
@@ -29,6 +29,7 @@ class Volier:
                 if mass > i.food_day:
                     i.eats(i.food_day, typeOfFood)
                     mass -= i.food_day
+                    
                 else:
                     print(i.name, ":", "mne ne xvativo")
             else:
