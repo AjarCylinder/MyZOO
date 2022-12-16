@@ -15,8 +15,8 @@ class BaseAnimal:
     def doSound(self):
         print(self._name, ":", self._sound)
 
-    def eats(self, mass, typeOfEat):
-        if (typeOfEat in self.whatEat):
+    def eats(self, mass, typeOfFood):
+        if (typeOfFood in self.whatEat):
             print(self._name, ": Ya pokushal")
             if mass >= self.food_day:
                 self.isFeeded = True
@@ -30,22 +30,22 @@ class BaseAnimal:
         print(self._name, ": Davai poigrayem!")
 
     @property
-    def Age(self):
+    def age(self):
         return self._age
 
-    @Age.setter
-    def Age(self, value):
+    @age.setter
+    def age(self, value):
         if value == int:
             self._age = value
         else:
             print("Одумайся, так нельзя")
 
     @property
-    def Name(self):
+    def name(self):
         return self._name
 
-    @Name.setter
-    def Name(self, name):
+    @name.setter
+    def name(self, name):
         self._name = name
 
     @property
