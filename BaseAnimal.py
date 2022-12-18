@@ -9,14 +9,14 @@ class BaseAnimal:
         self._whatEat = whatEat
         self._predator = True
         self._sound = ""
-        self.isFeeded = False
-
+        self._isFeeded = False
+        self._typeOfAnimal = ""
 
     def doSound(self):
         print(self._name, ":", self._sound)
 
     def eats(self, mass, typeOfFood):
-        if (typeOfFood in self.whatEat):
+        if typeOfFood in self.whatEat:
             print(self._name, ": Ya pokushal")
             if mass >= self.food_day:
                 self.isFeeded = True

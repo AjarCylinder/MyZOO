@@ -8,3 +8,4 @@ class Elephant(BaseAnimal):
         self._whatEat = whatEat
         self._predator = False
         self._sound = "UUErrrrrrrrrrrRRRRRRRR"
+        self._typeOfAnimal = "Elephant"
