@@ -14,5 +14,9 @@ volier.addAnimal(Max)
 volier.addAnimal(Bloba)
 volier.addAnimal(D)
 
-volier.doSound()
+volier.feed(11, "сено")
+
+volier.seeEat()
+
+volier.seeAnimalWhoNotEat()
 

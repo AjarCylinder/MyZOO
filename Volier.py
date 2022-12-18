@@ -6,6 +6,9 @@ class Volier:
         self._place = place
         self._list = []
         self._typeOfPredator = ""
+        self._massOfFood = 0
+        self.typeOfFood = ""
+        self._listWhoNotEat = []
 
     def addAnimal(self, animal):
         if not self._list:  # если список пуст:
@@ -59,20 +62,29 @@ class Volier:
             i.doSound()
 
     def feed(self, mass, typeOfFood):
+        self._massOfFood = mass
+        self.typeOfFood = typeOfFood
         for i in self._list:
-            if typeOfFood in i.whatEat:
-                if mass > i.food_day:
-                    i.eats(i.food_day, typeOfFood)
-                    mass -= i.food_day
+            if self.typeOfFood in i.whatEat:
+                if self._massOfFood > i.food_day:
+                    i.eats(i.food_day, self.typeOfFood)
+                    self._massOfFood -= i.food_day
                 else:
+                    i.food_day -= self._massOfFood
                     print(i.name, ":", "mne ne xvativo")
+                    self._massOfFood = 0
+                    self._listWhoNotEat.append(i)
             else:
                 print(i.name, ":", "ya takoe ne em")
-        return mass
 
-    def seeEat(self, mass):
-        if mass > 0:
-            print("В вольере осталось", mass)
+
+    def seeEat(self):
+        if self._massOfFood >= 0:
+            print("В вольере осталось", self._massOfFood, self.typeOfFood)
+
+    def seeAnimalWhoNotEat(self):
+        for i in self._listWhoNotEat:
+            print(i.name, ":", "я не наелся, мне нужно ещё", i.food_day, "еды")
 
 
     @property
