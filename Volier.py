@@ -18,6 +18,7 @@ class Volier:
                         self._typeOfPredator = animal.typeOfAnimal
                         self._list.append(animal)
                         self._place -= animal.place
+                        print("Животное подселено!")
                     else:
                         print(animal.name, ":", "мало места")
                 else:
@@ -27,6 +28,7 @@ class Volier:
                     if animal.place <= self._place:
                         self._list.append(animal)
                         self._place -= animal.place
+                        print("Животное подселено!")
                     else:
                         print(animal.name, ":", "мало места")
                 else:
@@ -38,6 +40,7 @@ class Volier:
                         if animal.place <= self._place:
                             self._list.append(animal)
                             self._place -= animal.place
+                            print("Животное подселено!")
                         else:
                             print(animal.name, ":", "мало места")
                     else:
@@ -49,6 +52,7 @@ class Volier:
                     if animal.place <= self._place:
                         self._list.append(animal)
                         self._place -= animal.place
+                        print("Животное подселено!")
                     else:
                         print(animal.name, ":", "мало места")
                 else:
@@ -56,27 +60,32 @@ class Volier:
 
     def deleteAnimal(self, animal):
         self._list.remove(animal)
+        print("Животное отселено!")
 
     def doSound(self):
         for i in self._list:
             i.doSound()
 
     def feed(self, mass, typeOfFood):
+        p = 0
+        np = 0
         self._massOfFood = mass
         self.typeOfFood = typeOfFood
         for i in self._list:
             if self.typeOfFood in i.whatEat:
-                if self._massOfFood > i.food_day:
+                if self._massOfFood >= i.food_day:
                     i.eats(i.food_day, self.typeOfFood)
                     self._massOfFood -= i.food_day
+                    p += 1
                 else:
                     i.food_day -= self._massOfFood
                     print(i.name, ":", "mne ne xvativo")
                     self._massOfFood = 0
                     self._listWhoNotEat.append(i)
+                    np += 1
             else:
                 print(i.name, ":", "ya takoe ne em")
-
+        return p
 
     def seeEat(self):
         if self._massOfFood >= 0:
@@ -84,7 +93,7 @@ class Volier:
 
     def seeAnimalWhoNotEat(self):
         for i in self._listWhoNotEat:
-            print(i.name, ":", "я не наелся, мне нужно ещё", i.food_day, "еды")
+            print(i.name, ":", "я не наелся, мне нужно ещё", i.food_day, i.whatEat)
 
 
     @property
@@ -95,13 +104,3 @@ class Volier:
     def place(self):
         return self._place
 
-    '''if animal.predator == False:
-        if animal.biom == self._biom:
-            if animal.place <= self._place:
-                self._list.append(animal)
-                self._place -= animal.place
-            else:
-                print(animal.name, ":", "mne ne xvataet mesta")
-        else:
-            print(animal.name, ":", "menya tuda nelza")
-    '''
